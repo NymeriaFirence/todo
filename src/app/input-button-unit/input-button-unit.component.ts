@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-input-button-unit',
   template: `
   <p>
-    input-button-unit works!
     The title is: {{ title }}
   </p>
 `,
@@ -13,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 export class InputButtonUnitComponent implements OnInit {
 
   title = 'Hello World';
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() {
+    this.title = 'I Love Angular'
   }
 
+  ngOnInit() {
+   this.changeTitle('My First Angular App');
+  }
+
+  changeTitle(newTitle: string) {
+    this.title = newTitle;
+  }
 }
